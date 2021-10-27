@@ -209,7 +209,7 @@
 						</div>						
 						<div class="col-lg-4  col-md-6">
 							<div class="single-footer-widget mail-chimp">
-								<h6 class="mb-20">Конакты</h6>
+								<h6 class="mb-20">Контакты</h6>
 								<ul class="list-contact">
 									<li class="flex-row d-flex">
 										<div class="icon">

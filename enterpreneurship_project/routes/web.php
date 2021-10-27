@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\MailController;
 
 
 /*
@@ -15,8 +16,8 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('', function () {
+    return view('index');
 });
 
 Route::get('/post/{id}', function($id){
@@ -26,7 +27,7 @@ Route::get('/post/{id}', function($id){
 Route::get('/post',[PostController::class,'index']);
 
 
-Route::get('/index', function () {
+Route::get('/sleepstore', function () {
     return view('index');
 });
 
@@ -45,3 +46,5 @@ Route::get('/text', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/send', [MailController::class, 'sendToMail']);
