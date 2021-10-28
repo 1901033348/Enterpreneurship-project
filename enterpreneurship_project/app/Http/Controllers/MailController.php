@@ -18,7 +18,7 @@ class MailController extends Controller
         // ];
 
         Mail::to("190103348@stu.sdu.edu.kz")->send(new TestMail($details));
-        alert("Sent");
+        return "<script>alert('Sent');</script>";
         return back();
     }
 }
