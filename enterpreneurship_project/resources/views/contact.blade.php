@@ -153,6 +153,7 @@
 						<div class="col-lg-8">
 							<form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
 								<div class="row">	
+
 									<div class="col-lg-6 form-group">
 										<input name="name" placeholder="Имя" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
 									
@@ -164,8 +165,9 @@
 										<textarea class="common-textarea form-control" name="message" placeholder="..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>						
 									</div>
 									<div class="col-lg-12 d-flex justify-content-between">
-										<div class="alert-msg" style="text-align: left;"></div>
-										<button class="genric-btn primary circle" style="float: right;">Отправить</button>		
+										<form method="post" action="{{route('sendMessage')}}">
+											<button type="submit" class="genric-btn primary circle" style="text-align: right;">Отправить</button>
+										</form>
 									</div>
 								</div>
 							</form>	

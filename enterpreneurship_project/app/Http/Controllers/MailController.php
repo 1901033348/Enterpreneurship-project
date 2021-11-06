@@ -18,7 +18,23 @@ class MailController extends Controller
         // ];
 
         Mail::to("190103348@stu.sdu.edu.kz")->send(new TestMail($details));
-        return "<script>alert('Sent');</script>";
         return back();
+    }
+    function send(Request $request){
+     $this->validate($request, [
+      'name'     =>  'required',
+      'email'  =>  'required|email',
+      'subject' => 'required',
+      'message' =>  'required'
+     ]);
+
+        $details = array(
+            'name'      =>  $request->name,
+            'message'   =>   $request->message
+        );
+
+     Mail::to('190103348@stu.sdu.edu.kz')->send(new TestMail($details));
+     return back()->with('success', 'Thanks for contacting us!');
+
     }
 }
